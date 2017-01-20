@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/round_rect_for_dialog"
+    android:layout_marginTop="64dp"
+    android:layout_marginBottom="80dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/half_top_round_rect"
+        android:layout_marginLeft="1px"
+        android:layout_marginTop="1px"
+        android:layout_marginRight="1px">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Select Party"
+            android:textColor="#fff"
+            android:singleLine="true"
+            android:visibility="visible"
+            android:textSize="20dp"
+            android:paddingLeft="?attr/actionBarSize"
+            android:paddingRight="?attr/actionBarSize"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lst_parties"
+            android:cacheColorHint="@android:color/transparent"
+            android:dividerHeight="1px"
+            android:divider="@drawable/black_horz_split_line"
+            tools:listitem="@layout/listitem_party"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="No Data"
+            android:gravity="center"
+            android:id="@+id/tv_empty_message"
+            android:textColor="#1000"
+            android:textSize="48dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:background="@drawable/close_button_style"
+        android:id="@+id/lv_close">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#20000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Cancel"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="false"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

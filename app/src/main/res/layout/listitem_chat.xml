@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:id="@+id/lv_leftpane"
+            android:visibility="visible"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:orientation="vertical">
+
+                <com.partyappfia.utils.CircleImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:id="@+id/iv_left_avatar"
+                    app:civ_fill_color="@color/colorOrange"
+                    android:src="@drawable/avatar_mark" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:gravity="center_vertical">
+
+                <com.partyappfia.utils.GSAChatLeftPane
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|left"
+                    android:id="@+id/lv_leftframe"
+                    android:paddingLeft="13dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_left_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello, how are you?"
+                        android:textColor="@android:color/white"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:background="@android:color/transparent"
+                        android:visibility="visible"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/iv_left_trash"
+                        android:src="@drawable/trash" />
+
+                </com.partyappfia.utils.GSAChatLeftPane>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lv_rightpane"
+            android:visibility="visible"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <com.partyappfia.utils.GSAChatRightPane
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lv_rightframe"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="13dp"
+                            android:paddingBottom="8dp"
+                            android:longClickable="true"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_right_message"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fine, thanks, and you?"
+                                android:textColor="@android:color/white"
+                                android:textAppearance="?android:textAppearanceSmall"
+                                android:background="@android:color/transparent"
+                                android:visibility="visible"
+                                android:textSize="12dp" />
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginLeft="8dp"
+                                android:id="@+id/iv_right_trash"
+                                android:src="@drawable/trash" />
+
+                        </com.partyappfia.utils.GSAChatRightPane>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:layout_marginLeft="4dp"
+                    android:orientation="vertical">
+
+                    <com.partyappfia.utils.CircleImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:id="@+id/iv_right_avatar"
+                        app:civ_fill_color="@color/colorOrange"
+                        android:src="@drawable/avatar_mark" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

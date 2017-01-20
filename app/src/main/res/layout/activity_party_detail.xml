@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:id="@+id/lv_back"
+                android:gravity="center"
+                app:mrl_rippleOverlay="true"
+                app:mrl_rippleColor="@android:color/white"
+                app:mrl_rippleHover="true"
+                app:mrl_rippleDuration="200"
+                app:mrl_rippleFadeDuration="75"
+                app:mrl_rippleBackground="@android:color/transparent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:src="@drawable/back"
+                        android:layout_weight="0.3"
+                        android:adjustViewBounds="true" />
+
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Party Detail"
+            android:textColor="#fff"
+            android:singleLine="true"
+            android:visibility="visible"
+            android:textSize="20dp"
+            android:paddingLeft="?attr/actionBarSize"
+            android:paddingRight="?attr/actionBarSize"
+            android:gravity="center"
+            android:id="@+id/tv_title" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:id="@+id/lv_done"
+                android:gravity="center"
+                app:mrl_rippleOverlay="true"
+                app:mrl_rippleColor="@android:color/white"
+                app:mrl_rippleHover="true"
+                app:mrl_rippleDuration="200"
+                app:mrl_rippleFadeDuration="75"
+                app:mrl_rippleBackground="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="DONE"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:id="@+id/tv_done" />
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sv_pane">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="240dp">
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/tv_address"
+                    android:layout_margin="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="14dp"
+                    android:background="@drawable/halfblack_round_rect"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/iv_template"
+                    android:background="@android:color/transparent" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@drawable/orange_horz_split_line" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lv_display_pane"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Party Title"
+                            android:id="@+id/tv_party_title"
+                            android:gravity="center"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorDarkOrange"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="comments"
+                            android:id="@+id/tv_comment"
+                            android:gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:textSize="14dp"
+                            android:textColor="#888"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="expire time"
+                            android:id="@+id/tv_time"
+                            android:gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:textSize="16dp"
+                            android:textColor="@color/colorBlue"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:id="@+id/lv_input_pane"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/orange_round_rect">
+
+                            <TextView
+                                android:layout_width="96dp"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Title"
+                                android:textColor="@android:color/white"
+                                android:textSize="14dp"
+                                android:paddingRight="16dp"
+                                android:gravity="center_vertical|right" />
+
+                            <EditText
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:id="@+id/ev_party_title"
+                                android:textColor="@android:color/black"
+                                android:textSize="14dp"
+                                android:singleLine="true"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="24dp"
+                                android:maxLines="2"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/white_right_round_rect"
+                                android:hint="Please enter party title" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/orange_round_rect"
+                            android:layout_marginTop="16dp">
+
+                            <TextView
+                                android:layout_width="96dp"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Comment"
+                                android:textColor="@android:color/white"
+                                android:textSize="14dp"
+                                android:paddingRight="16dp"
+                                android:gravity="center_vertical|right" />
+
+                            <EditText
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:id="@+id/ev_comment"
+                                android:textColor="@android:color/black"
+                                android:textSize="14dp"
+                                android:singleLine="true"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="24dp"
+                                android:maxLines="2"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/white_right_round_rect"
+                                android:hint="Please enter party comment" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/orange_round_rect"
+                            android:layout_marginTop="16dp" >
+
+                            <TextView
+                                android:layout_width="96dp"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Address"
+                                android:textColor="@android:color/white"
+                                android:textSize="14dp"
+                                android:paddingRight="16dp"
+                                android:gravity="center_vertical|right" />
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_margin="1dp">
+
+                                <AutoCompleteTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:id="@+id/ev_address"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="8dp"
+                                    android:paddingRight="32dp"
+                                    android:maxLines="2"
+                                    android:background="@drawable/white_right_round_rect"
+                                    android:hint="Please enter party address" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/orange_round_rect"
+                            android:layout_marginTop="16dp"
+                            android:id="@+id/lv_expire_time">
+
+                            <TextView
+                                android:layout_width="96dp"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Time"
+                                android:textColor="@android:color/white"
+                                android:textSize="14dp"
+                                android:paddingRight="16dp"
+                                android:gravity="center_vertical|right" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:id="@+id/tv_expire_time"
+                                android:textColor="@android:color/black"
+                                android:textSize="14dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="24dp"
+                                android:maxLines="2"
+                                android:ellipsize="end"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/white_right_round_rect"
+                                android:hint="Please select party time" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Party owner"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorDarkOrange"
+                            android:id="@+id/tv_owner_label" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@drawable/orange_horz_split_line"
+                        android:layout_marginTop="4dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp">
+
+                        <com.partyappfia.utils.CircleImageView
+                            android:orientation="vertical"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:id="@+id/iv_avatar"
+                            app:civ_fill_color="@color/colorOrange"
+                            android:src="@drawable/avatar_mark" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="1"
+                            android:minHeight="48dp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="User Name"
+                                android:id="@+id/tv_username"
+                                android:textColor="@color/colorDarkOrange"
+                                android:textSize="14dp" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp">
+
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:src="@drawable/phone_orange" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:text="+86 123123123123"
+                                    android:id="@+id/tv_phone"
+                                    android:textColor="#666"
+                                    android:textSize="10dp"
+                                    android:layout_marginLeft="8dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:gravity="center_vertical|right"
+                            android:layout_marginLeft="8dp">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <RadioGroup
+                                    android:layout_width="48dp"
+                                    android:layout_height="16dp"
+                                    android:orientation="horizontal"
+                                    android:id="@+id/rg_rating"
+                                    android:clickable="false">
+
+                                    <RadioButton
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/rdo_low"
+                                        android:button="@null"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:checked="true"
+                                        android:enabled="false"
+                                        android:background="@drawable/radio_rating_low" />
+
+                                    <RadioButton
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/rdo_middle"
+                                        android:button="@null"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:checked="false"
+                                        android:enabled="false"
+                                        android:background="@drawable/radio_rating_middle" />
+
+                                    <RadioButton
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/rdo_high"
+                                        android:button="@null"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:checked="false"
+                                        android:enabled="false"
+                                        android:background="@drawable/radio_rating_high" />
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Inviting users"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorDarkOrange" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/iv_add_user"
+                        android:src="@drawable/add"
+                        android:layout_marginLeft="16dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@drawable/orange_horz_split_line"
+                    android:layout_marginTop="4dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lst_users"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:dividerHeight="1px"
+                        android:divider="@drawable/black_horz_split_line"
+                        tools:listitem="@layout/listitem_party_user" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="No Data"
+                        android:gravity="center"
+                        android:id="@+id/tv_empty_message"
+                        android:textColor="#1000"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:paddingTop="32dp"
+                        android:paddingBottom="32dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

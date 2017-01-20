@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_pane"
+        app:mrl_rippleOverlay="true"
+        app:mrl_rippleColor="@color/colorPrimary"
+        app:mrl_rippleHover="true"
+        app:mrl_rippleDuration="200"
+        app:mrl_rippleFadeDuration="75"
+        app:mrl_rippleBackground="#fff">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp">
+
+            <com.partyappfia.utils.CircleImageView
+                android:orientation="vertical"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/iv_avatar"
+                app:civ_fill_color="@color/colorOrange"
+                android:src="@drawable/avatar_mark" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="User Name"
+                    android:id="@+id/tv_username"
+                    android:textColor="@color/colorDarkOrange"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp">
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/phone_orange" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="+86 123123123123"
+                        android:id="@+id/tv_phone"
+                        android:textColor="#666"
+                        android:textSize="10dp"
+                        android:layout_marginLeft="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center_vertical|right"
+                android:layout_marginLeft="8dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <RadioGroup
+                        android:layout_width="48dp"
+                        android:layout_height="16dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/rg_rating"
+                        android:clickable="false">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/rdo_low"
+                            android:button="@null"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:checked="true"
+                            android:enabled="false"
+                            android:clickable="false"
+                            android:background="@drawable/radio_rating_low" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/rdo_middle"
+                            android:button="@null"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:clickable="false"
+                            android:background="@drawable/radio_rating_middle" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/rdo_high"
+                            android:button="@null"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:clickable="false"
+                            android:background="@drawable/radio_rating_high" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+</LinearLayout>

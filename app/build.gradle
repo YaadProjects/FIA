@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.partyappfia"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 13
+        versionName "1.3"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    productFlavors {
+//        // JAR
+//        online{
+//
+//        }
+//
+//        // AAR
+//        onlineAar{
+//
+//        }
+//
+//        // for development
+//        offlineDev{
+//
+//        }
+//    }
+}
+
+def qbSdkVersion = '2.6.1'
+def playServiceGCMVersion = "8.3.0"
+def playServiceLocationVersion = "8.3.0"
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile ('com.android.support:support-v4:23.3.0') {
+        force = true
+    }
+    compile 'com.balysv:material-ripple:1.0.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'jp.wasabeef:picasso-transformations:2.1.0'
+    compile "com.google.android.gms:play-services-location:$playServiceLocationVersion"
+    compile "com.google.android.gms:play-services-gcm:$playServiceGCMVersion"
+    compile 'com.appeaser.sublimepickerlibrary:sublimepickerlibrary:2.1.1'
+    compile 'com.github.orangegangsters:swipy:1.2.3@aar'
+    compile 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.0'
+
+    compile "com.quickblox:quickblox-android-sdk-core:$qbSdkVersion@aar"
+    compile ("com.quickblox:quickblox-android-sdk-chat:$qbSdkVersion@aar"){
+        transitive=true
+    }
+    compile "com.quickblox:quickblox-android-sdk-content:$qbSdkVersion@aar"
+    compile "com.quickblox:quickblox-android-sdk-messages:$qbSdkVersion@aar"
+    compile "com.quickblox:quickblox-android-sdk-customobjects:$qbSdkVersion@aar"
+    compile "com.quickblox:quickblox-android-sdk-location:$qbSdkVersion@aar"
+    compile "com.quickblox:quickblox-android-sdk-videochat-webrtc:$qbSdkVersion@aar"
+}

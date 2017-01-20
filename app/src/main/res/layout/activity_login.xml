@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_bkgnd"
+        android:id="@+id/lv_pane"
+        android:clickable="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
+            android:weightSum="1"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_appmark"
+                android:src="@drawable/app_mark"
+                android:adjustViewBounds="true"
+                android:maxHeight="128dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="32dp"
+            android:layout_marginTop="32dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="48dp"
+                        android:layout_height="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.5"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/user"
+                            android:alpha="0.5" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/ev_username"
+                        android:paddingLeft="48dp"
+                        android:background="@android:color/transparent"
+                        android:hint="User Name"
+                        android:singleLine="true"
+                        android:textColor="#fff"
+                        android:textColorHint="#8fff"
+                        android:textSize="18dp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#40ffffff"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="48dp"
+                        android:layout_height="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.5"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/password"
+                            android:alpha="0.5" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/ev_password"
+                        android:paddingLeft="48dp"
+                        android:background="@android:color/transparent"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textColor="#fff"
+                        android:textColorHint="#8fff"
+                        android:textSize="18dp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#40ffffff" />
+
+            </LinearLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/orange_round_rect"
+                android:id="@+id/lv_signin"
+                android:clickable="true"
+                app:mrl_rippleOverlay="true"
+                app:mrl_rippleColor="#000"
+                app:mrl_rippleHover="true"
+                app:mrl_rippleDuration="200"
+                app:mrl_rippleFadeDuration="75"
+                app:mrl_rippleRoundedCorners="24dp"
+                app:mrl_rippleBackground="@android:color/transparent"
+                android:layout_marginTop="32dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sign in"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:textSize="20dp" />
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/tv_signup"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_marginTop="16dp"
+                android:text="@string/signup_label" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

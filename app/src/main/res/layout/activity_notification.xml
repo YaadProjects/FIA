@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Notification"
+            android:textColor="#fff"
+            android:singleLine="true"
+            android:visibility="visible"
+            android:textSize="20dp"
+            android:paddingLeft="?attr/actionBarSize"
+            android:paddingRight="?attr/actionBarSize"
+            android:gravity="center" />
+
+        <RelativeLayout
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:id="@+id/lv_back"
+                android:gravity="center"
+                app:mrl_rippleOverlay="true"
+                app:mrl_rippleColor="@android:color/white"
+                app:mrl_rippleHover="true"
+                app:mrl_rippleDuration="200"
+                app:mrl_rippleFadeDuration="75"
+                app:mrl_rippleBackground="@android:color/transparent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:src="@drawable/back"
+                        android:layout_weight="0.3"
+                        android:adjustViewBounds="true" />
+
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout
+            android:id="@+id/swipy_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srl_direction="top">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lst_notifications"
+                android:cacheColorHint="@android:color/transparent"
+                android:dividerHeight="1px"
+                android:divider="@drawable/black_horz_split_line"
+                tools:listitem="@layout/listitem_notification"/>
+
+        </com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="No Data"
+            android:gravity="center"
+            android:id="@+id/tv_empty_message"
+            android:textColor="#1000"
+            android:textSize="48dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

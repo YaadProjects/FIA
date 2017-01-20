@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/round_rect_for_dialog"
+    android:layout_marginTop="64dp"
+    android:layout_marginBottom="80dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|top"
+        android:background="@drawable/half_top_round_rect"
+        android:layout_marginLeft="1px"
+        android:layout_marginTop="1px"
+        android:layout_marginRight="1px">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Select User"
+            android:textColor="@android:color/white"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lst_users"
+            android:cacheColorHint="@android:color/transparent"
+            android:dividerHeight="1px"
+            android:divider="@drawable/black_horz_split_line"
+            tools:listitem="@layout/listitem_single_select_user" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="No Data"
+            android:gravity="center"
+            android:id="@+id/tv_empty_message"
+            android:textColor="#1000"
+            android:textSize="48dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:background="@drawable/close_button_style"
+        android:id="@+id/lv_close">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#20000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Cancel"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="false"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

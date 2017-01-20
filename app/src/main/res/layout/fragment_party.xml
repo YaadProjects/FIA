@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="My Parties"
+                android:id="@+id/tv_my_parties"
+                android:layout_weight="1"
+                android:textColor="@color/colorOrange"
+                android:gravity="center"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_vert_split_line"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Invited Parties"
+                android:id="@+id/tv_invited_parties"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lst_parties"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:dividerHeight="1px"
+                    android:divider="@drawable/black_horz_split_line"
+                    tools:listitem="@layout/listitem_party"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="No Data"
+                    android:gravity="center"
+                    android:id="@+id/tv_empty_message"
+                    android:textColor="#1000"
+                    android:textSize="48dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_add_party"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

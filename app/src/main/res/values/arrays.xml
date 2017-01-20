@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="image_array">
+        <item>Camera</item>
+        <item>Gallery</item>
+        <item>Cancel</item>
+    </string-array>
+</resources>

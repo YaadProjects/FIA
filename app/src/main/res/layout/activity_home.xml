@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/content_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/splash_bkgnd">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="horizontal"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                android:paddingTop="24dp"
+                android:gravity="center_vertical">
+
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:src="@drawable/avatar_ring_white"
+                        android:adjustViewBounds="true"
+                        android:layout_weight="0.4"
+                        android:layout_centerInParent="true" />
+
+                    <com.partyappfia.utils.CircleImageView
+                        android:orientation="vertical"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/iv_avatar"
+                        android:src="@drawable/avatar_mark" />
+
+                </RelativeLayout>>
+
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="User Name"
+                    android:id="@+id/tv_username"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textSize="20dp" />
+
+                <Space
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_horz_split_line">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/white_horz_split_line"></LinearLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.balysv.materialripple.MaterialRippleLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:id="@+id/nav_notification"
+                        android:clickable="true"
+                        app:mrl_rippleOverlay="true"
+                        app:mrl_rippleColor="@android:color/white"
+                        app:mrl_rippleHover="true"
+                        app:mrl_rippleDuration="200"
+                        app:mrl_rippleFadeDuration="75"
+                        app:mrl_rippleBackground="@android:color/transparent">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="48dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:gravity="center"
+                                android:weightSum="1">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="0.5"
+                                    android:src="@drawable/notification"
+                                    android:adjustViewBounds="true" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="8dp"
+                                android:text="Notification"
+                                android:gravity="center_vertical"
+                                android:textColor="#fff"
+                                android:textSize="16dp" />
+
+                        </LinearLayout>
+
+                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                    <com.balysv.materialripple.MaterialRippleLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:id="@+id/nav_profile"
+                        android:clickable="true"
+                        app:mrl_rippleOverlay="true"
+                        app:mrl_rippleColor="@android:color/white"
+                        app:mrl_rippleHover="true"
+                        app:mrl_rippleDuration="200"
+                        app:mrl_rippleFadeDuration="75"
+                        app:mrl_rippleBackground="@android:color/transparent">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="48dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:gravity="center"
+                                android:weightSum="1">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="0.5"
+                                    android:src="@drawable/profile"
+                                    android:adjustViewBounds="true" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="8dp"
+                                android:text="My Profile"
+                                android:gravity="center_vertical"
+                                android:textColor="#fff"
+                                android:textSize="16dp" />
+
+                        </LinearLayout>
+
+                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                    <com.balysv.materialripple.MaterialRippleLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:id="@+id/nav_logout"
+                        android:clickable="true"
+                        app:mrl_rippleOverlay="true"
+                        app:mrl_rippleColor="@android:color/white"
+                        app:mrl_rippleHover="true"
+                        app:mrl_rippleDuration="200"
+                        app:mrl_rippleFadeDuration="75"
+                        app:mrl_rippleBackground="@android:color/transparent">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="48dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:gravity="center"
+                                android:weightSum="1">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="0.5"
+                                    android:src="@drawable/logout"
+                                    android:adjustViewBounds="true" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="8dp"
+                                android:text="Log out"
+                                android:gravity="center_vertical"
+                                android:textColor="#fff"
+                                android:textSize="16dp" />
+
+                        </LinearLayout>
+
+                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
