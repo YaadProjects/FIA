@@ -1,0 +1,2 @@
+# FIA
+The app allows you to host parties with family, friends, and co-workers. The app has profile where you can add avatar, phone number, and has rating system for how many party you have hosted or been invited to. You can invite people with a click of a button to notify them of your gathering. The persons invited may accept or reject your invitation. A person may call or instant message you with details on the party.
